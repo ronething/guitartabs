@@ -13,5 +13,6 @@
   -	漂
 -   押尾コータロー
     -   Merry Christmas Mr. Lawrence
+    -   nayuta
 
 # 弹唱
