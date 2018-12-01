@@ -18,6 +18,7 @@
 - 押尾コータロー
     -   Merry Christmas Mr. Lawrence
     -   nayuta
+    -   桜　咲くころ (樱花🌸盛开时)
 
 -   井草聖二 （いぐさ せいじ）
 
