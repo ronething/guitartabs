@@ -8,5 +8,5 @@
 
 - b站翻弹视频
 
-<iframe src="//player.bilibili.com/player.html?aid=15279307&cid=24869450&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+  [【指弹】我爱你--《夏目友人帐》ED](https://www.bilibili.com/video/av15279307)
 
