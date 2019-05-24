@@ -21,6 +21,7 @@
     -   ティコ
     -   departure
     -   夕凪
+	-	dear
 - 井草聖二 （いぐさ せいじ）
 
     -   new day new life
