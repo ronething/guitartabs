@@ -1,0 +1,31 @@
+name: update readme when push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: run python script
+      run: python3 main.py
+    - name: config git info
+      run: |
+        git config --global user.email "admin@ronething.cn"
+        git config --global user.name "ronething-bot"
+    - name: commit change
+      run: |
+        git checkout master
+        git add README.md
+        git commit -m "chore: update readme with github action"
+    - name: push change
+      env:
+        GITHUB_LOGIN: ronething
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push https://$GITHUB_LOGIN:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git master:master
+    - name: done
+      run: echo 'done'
