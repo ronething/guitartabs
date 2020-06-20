@@ -1,4 +1,4 @@
-## contributing
+## CONTRIBUTING
 
 - 指弹放在 fingerStyle 目录
 
