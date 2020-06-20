@@ -1,6 +1,6 @@
 ---
-name: 🎸吉他谱需求
-about: 教一下。
+name: guitar tabs request
+about: hello world
 ---
 
 <!--
