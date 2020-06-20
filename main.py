@@ -3,7 +3,9 @@
 
 import os
 import codecs
+
 from pathlib import Path
+from urllib import parse
 
 # const
 Finger = 'fingerStyle'
@@ -37,8 +39,7 @@ class DirectionTree(object):
         if sub_path.is_file():
             if level == 4:
                 if sub_path.suffix == '.md' or sub_path.suffix == '.pdf':
-                    url = sub_path.parent.parent.joinpath(
-                        sub_path.parent, sub_path)
+                    url = parse.quote(str(sub_path))
                     self.tree += f'- [{sub_path.name}](./{url})\n\n'
         elif sub_path.is_dir():
             if level == 1:
