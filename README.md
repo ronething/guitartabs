@@ -114,6 +114,8 @@
 
 #### 我不会喜欢你
 
+- [我不会喜欢你.pdf](./fingerStyle/%E9%99%88%E6%9F%8F%E9%9C%96/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0.pdf)
+
 - [README.md](./fingerStyle/%E9%99%88%E6%9F%8F%E9%9C%96/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0/README.md)
 
 ### other
@@ -227,6 +229,14 @@
 #### 当你
 
 - [README.md](./singing/%E6%9E%97%E4%BF%8A%E6%9D%B0/%E5%BD%93%E4%BD%A0/README.md)
+
+### 陈柏霖
+
+#### 我不会喜欢你
+
+- [我不会喜欢你.pdf](./singing/%E9%99%88%E6%9F%8F%E9%9C%96/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0.pdf)
+
+- [README.md](./singing/%E9%99%88%E6%9F%8F%E9%9C%96/%E6%88%91%E4%B8%8D%E4%BC%9A%E5%96%9C%E6%AC%A2%E4%BD%A0/README.md)
 
 ### 筷子兄弟
 
