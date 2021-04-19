@@ -50,6 +50,8 @@
 
 #### tema D'amore
 
+- [README.md](./fingerStyle/%E5%B2%B8%E9%83%A8%E7%9C%9E%E6%98%8E/tema%20D%27amore/README.md)
+
 ### GIN
 
 #### 紫陽花(あじさい)
