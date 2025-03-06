@@ -2,7 +2,6 @@
   <div>
     <div class="relative bg-gray-800">
       <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="../assets/guitar-hero.jpg" alt="吉他背景图">
         <div class="absolute inset-0 bg-gray-800 opacity-75"></div>
       </div>
       <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
