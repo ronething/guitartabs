@@ -28,6 +28,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-gray-500 text-sm">
           吉他谱收藏 &copy; {{ new Date().getFullYear() }}
+          <span v-if="lastUpdated" class="ml-2">数据更新时间: {{ formatDate(lastUpdated) }}</span>
         </p>
       </div>
     </footer>
@@ -35,5 +36,29 @@
 </template>
 
 <script setup>
-// App.vue 无需特殊逻辑
+import { ref, onMounted } from 'vue';
+import { getLastUpdated } from './utils/guitarTabService';
+
+const lastUpdated = ref(null);
+
+// 格式化日期
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleString('zh-CN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
+// 获取最后更新时间
+onMounted(async () => {
+  try {
+    lastUpdated.value = await getLastUpdated();
+  } catch (error) {
+    console.error('获取更新时间失败:', error);
+  }
+});
 </script> 

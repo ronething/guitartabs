@@ -1,0 +1,44 @@
+name: Update Guitar Tabs Data
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'fingerStyle/**'
+      - 'singing/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate tabs data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p guitar-tabs-site/public/data
+          node scripts/generateTabsData.js
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "admin@ronething.cn"
+          git config --global user.name "ronething-bot"
+          git add guitar-tabs-site/public/data/tabs-data.json
+          git commit -m "chore: update guitar tabs data" || echo "No changes to commit"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
