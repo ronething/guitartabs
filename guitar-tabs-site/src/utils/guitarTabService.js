@@ -5,6 +5,9 @@ const REPO_OWNER = 'ronething' // 替换为你的GitHub用户名
 const REPO_NAME = 'guitartabs' // 替换为你的仓库名称
 const API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`
 const CONTENT_BASE = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/master`
+const headers = {
+  'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
+}
 
 /**
  * 获取指定目录下的所有文件和文件夹
@@ -12,12 +15,31 @@ const CONTENT_BASE = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAM
  * @returns {Promise<Array>} - 目录内容数组
  */
 export async function getDirectoryContents(path) {
+  // 检查缓存
+  const cacheKey = `dir_cache_${path}`;
+  const cachedData = localStorage.getItem(cacheKey);
+  
+  // 如果缓存存在且未过期 24 小时，返回缓存数据
+  const _timestamp = localStorage.getItem(`${cacheKey}_timestamp`);
+  console.log("timestamp is ",_timestamp)
+
+  if (cachedData && Date.now() - parseInt(_timestamp) < 24 * 3600 * 1000) {
+    console.log('使用缓存数据')
+    return JSON.parse(cachedData);
+  }
+  
   try {
-    const response = await fetch(`${API_BASE}/contents/${path}`)
+    const response = await fetch(`${API_BASE}/contents/${path}`, { headers });
     if (!response.ok) {
       throw new Error(`获取目录内容失败: ${response.statusText}`)
     }
-    return await response.json()
+    const data = await response.json();
+    console.log('获取新数据');
+    
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+    localStorage.setItem(`${cacheKey}_timestamp`, Date.now());
+    
+    return data;
   } catch (error) {
     console.error('获取目录内容出错:', error)
     return []
