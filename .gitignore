@@ -3,3 +3,9 @@
 
 .DS_Store
 .env
+
+.vite/
+.vite-cache/
+
+node_modules/
+dist/
