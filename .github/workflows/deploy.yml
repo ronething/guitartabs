@@ -7,7 +7,7 @@ on:
     paths:
       - 'fingerStyle/**'
       - 'singing/**'
-      - 'guitar-tabs-site/**'
+      - 'pages/**'
   workflow_dispatch:
 
 jobs:
@@ -20,22 +20,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
           cache: 'npm'
-          cache-dependency-path: guitar-tabs-site/package-lock.json
+          cache-dependency-path: pages/package-lock.json
 
       - name: Install Dependencies
         run: |
-          cd guitar-tabs-site
+          cd pages
           npm ci
 
       - name: Build
         run: |
-          cd guitar-tabs-site
+          cd pages
           npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: guitar-tabs-site/dist
+          folder: pages/dist
           branch: gh-pages

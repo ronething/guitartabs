@@ -27,14 +27,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p guitar-tabs-site/public/data
+          mkdir -p pages/public/data
           node scripts/generateTabsData.js
 
       - name: Commit changes
         run: |
-          git config --global user.email "admin@ronething.cn"
-          git config --global user.name "ronething-bot"
-          git add guitar-tabs-site/public/data/tabs-data.json
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add pages/public/data/tabs-data.json
           git commit -m "chore: update guitar tabs data" || echo "No changes to commit"
 
       - name: Push changes

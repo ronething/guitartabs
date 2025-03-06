@@ -146,7 +146,7 @@ async function generateTabsDataFile() {
   console.log('开始生成吉他谱数据文件...');
   try {
     // 创建输出目录
-    const outputDir = path.resolve(__dirname, '../guitar-tabs-site/public/data');
+    const outputDir = path.resolve(__dirname, '../pages/public/data');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }

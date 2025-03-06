@@ -5,8 +5,8 @@
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <img class="h-8 w-auto" src="./assets/guitar-icon.svg" alt="吉他谱收藏">
-              <span class="ml-2 text-xl font-bold text-gray-900">吉他谱收藏</span>
+              <img class="h-8 w-auto" src="./assets/guitar-icon.svg" alt="Guitar tabs">
+              <span class="ml-2 text-xl font-bold text-gray-900">Guitar tabs</span>
             </div>
           </div>
           <div class="flex items-center">
@@ -27,8 +27,9 @@
     <footer class="bg-white mt-auto py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-gray-500 text-sm">
-          吉他谱收藏 &copy; {{ new Date().getFullYear() }}
+          Guitar tabs &copy; {{ new Date().getFullYear() }}
           <span v-if="lastUpdated" class="ml-2">数据更新时间: {{ formatDate(lastUpdated) }}</span>
+          Powered by <a href="https://www.online-guitartuner.com" target="_blank">Online GuitarTuner</a>
         </p>
       </div>
     </footer>
