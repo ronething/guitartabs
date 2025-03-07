@@ -8,7 +8,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: { 
-      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Guitar Sheet Music'
+      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Music'
     }
   },
   // 英语路由
@@ -17,7 +17,7 @@ const routes = [
     name: 'HomeEn',
     component: Home,
     meta: { 
-      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Guitar Sheet Music',
+      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Music',
       locale: 'en'
     }
   },
@@ -27,7 +27,7 @@ const routes = [
     name: 'HomeZh',
     component: Home,
     meta: { 
-      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Guitar Sheet Music',
+      title: 'Guitar Tabs | Online Collection of Fingerstyle & Singing Music',
       locale: 'zh'
     }
   },

@@ -6,7 +6,7 @@
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
               <img class="h-8 w-auto" src="./assets/guitar-icon.svg" alt="Guitar Tabs">
-              <a href="/" class="ml-2 text-xl font-bold text-gray-900">{{ $t('home.title') }}</a>
+              <router-link to="/" class="ml-2 text-xl font-bold text-gray-900">{{ $t('home.title') }}</router-link>
             </div>
           </div>
           <div class="flex items-center space-x-4">
@@ -102,7 +102,11 @@ const isLanguageDropdownOpen = ref(false);
 // 当前语言
 const currentLocale = computed({
   get: () => locale.value,
-  set: (value) => { locale.value = value }
+  set: (value) => { 
+    locale.value = value;
+    // 保存语言选择到 localStorage
+    localStorage.setItem('userLanguage', value);
+  }
 });
 
 // 切换语言下拉菜单
