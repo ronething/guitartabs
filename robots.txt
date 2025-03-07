@@ -1,0 +1,10 @@
+# robots.txt for https://tabs.online-guitartuner.com
+User-agent: *
+Allow: /
+
+# 不允许爬虫访问特定目录（如有需要）
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap
+Sitemap: https://tabs.online-guitartuner.com/sitemap.xml
