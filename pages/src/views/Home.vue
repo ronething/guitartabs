@@ -5,9 +5,9 @@
         <div class="absolute inset-0 bg-gray-800 opacity-75"></div>
       </div>
       <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">吉他谱收藏</h1>
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">{{ $t('home.header') }}</h1>
         <p class="mt-6 text-xl text-gray-300 max-w-3xl">
-          收集整理的吉他谱资源，包括指弹和弹唱曲谱，希望能帮助到热爱吉他的你。
+          {{ $t('home.description') }}
         </p>
       </div>
     </div>
@@ -19,7 +19,7 @@
         </div>
 
         <div v-else>
-          <h2 class="text-3xl font-extrabold text-gray-900">曲谱分类</h2>
+          <h2 class="text-3xl font-extrabold text-gray-900">{{ $t('home.categories') }}</h2>
           
           <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2">
             <!-- 指弹分类卡片 -->
@@ -32,17 +32,17 @@
                     </svg>
                   </div>
                   <div class="ml-5">
-                    <h3 class="text-lg font-medium text-gray-900">指弹</h3>
+                    <h3 class="text-lg font-medium text-gray-900">{{ $t('category.fingerstyle') }}</h3>
                     <div class="mt-2 flex items-center text-sm text-gray-500">
-                      <span>{{ fingerStyleStats.artists }} 位艺术家</span>
+                      <span>{{ fingerStyleStats.artists }} {{ $t('category.artists') }}</span>
                       <span class="mx-2">•</span>
-                      <span>{{ fingerStyleStats.songs }} 首曲目</span>
+                      <span>{{ fingerStyleStats.songs }} {{ $t('category.songs') }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mt-6">
                   <router-link :to="{ name: 'Category', params: { type: 'fingerStyle' }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    浏览指弹谱
+                    {{ $t('category.browseFingerstyle') }}
                   </router-link>
                 </div>
               </div>
@@ -58,17 +58,17 @@
                     </svg>
                   </div>
                   <div class="ml-5">
-                    <h3 class="text-lg font-medium text-gray-900">弹唱</h3>
+                    <h3 class="text-lg font-medium text-gray-900">{{ $t('category.singing') }}</h3>
                     <div class="mt-2 flex items-center text-sm text-gray-500">
-                      <span>{{ singingStats.artists }} 位艺术家</span>
+                      <span>{{ singingStats.artists }} {{ $t('category.artists') }}</span>
                       <span class="mx-2">•</span>
-                      <span>{{ singingStats.songs }} 首曲目</span>
+                      <span>{{ singingStats.songs }} {{ $t('category.songs') }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mt-6">
                   <router-link :to="{ name: 'Category', params: { type: 'singing' }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    浏览弹唱谱
+                    {{ $t('category.browseSinging') }}
                   </router-link>
                 </div>
               </div>
@@ -77,7 +77,7 @@
           
           <!-- 最近更新 -->
           <div class="mt-16">
-            <h2 class="text-xl font-bold text-gray-900">最近更新</h2>
+            <h2 class="text-xl font-bold text-gray-900">{{ $t('home.recentUpdates') }}</h2>
             <ul class="mt-6 border-t border-gray-200 divide-y divide-gray-200">
               <li v-for="(item, index) in recentUpdates" :key="index" class="py-4">
                 <div class="flex items-center space-x-4">
@@ -86,11 +86,11 @@
                       {{ item.artist }} - {{ item.song }}
                     </p>
                     <p class="text-sm text-gray-500 truncate">
-                      {{ item.category }}
+                      {{ item.category === '指弹' ? $t('category.fingerstyle') : $t('category.singing') }}
                     </p>
                   </div>
                   <router-link :to="{ name: 'Artist', params: { type: item.type, name: item.artist }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">
-                    查看
+                    {{ $t('home.view') }}
                   </router-link>
                 </div>
               </li>
@@ -104,8 +104,10 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { buildGuitarTabsData } from '../utils/guitarTabService'
 
+const { t, locale } = useI18n()
 const loading = ref(true)
 const data = ref({
   fingerStyle: { name: '指弹', artists: [] },

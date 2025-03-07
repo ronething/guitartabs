@@ -11,12 +11,12 @@
             :to="{ name: 'Category', params: { type: categoryType }}" 
             class="mr-2 text-sm font-medium text-blue-600 hover:text-blue-500"
           >
-            &larr; 返回{{ categoryName }}
+            &larr; {{ $t('artist.backTo') }} {{ categoryNameI18n }}
           </router-link>
         </div>
         <h1 class="mt-2 text-3xl font-extrabold text-gray-900">{{ artistName }}</h1>
         <p class="mt-2 text-sm text-gray-500">
-          {{ songs.length }} 首曲目
+          {{ songs.length }} {{ $t('artist.songs') }}
         </p>
       </div>
 
@@ -27,7 +27,7 @@
             <div class="px-4 py-4 sm:px-6">
               <div class="flex items-center justify-between">
                 <h3 class="text-lg font-medium text-gray-900">{{ song.name }}</h3>
-                <p class="text-sm text-gray-500">{{ song.files.length }} 个文件</p>
+                <p class="text-sm text-gray-500">{{ song.files.length }} {{ $t('artist.files') }}</p>
               </div>
               <div class="mt-2 sm:flex sm:justify-between">
                 <div class="mt-2 flex flex-col text-sm text-gray-500 sm:mt-0">
@@ -60,9 +60,11 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { buildGuitarTabsData } from '../utils/guitarTabService'
 
 const route = useRoute()
+const { t } = useI18n()
 const loading = ref(true)
 const data = ref({
   fingerStyle: { name: '指弹', artists: [] },
@@ -76,6 +78,13 @@ const categoryType = computed(() => route.params.type)
 const categoryName = computed(() => {
   if (categoryType.value === 'fingerStyle') return '指弹'
   if (categoryType.value === 'singing') return '弹唱'
+  return ''
+})
+
+// 国际化分类名称
+const categoryNameI18n = computed(() => {
+  if (categoryType.value === 'fingerStyle') return t('category.fingerstyle')
+  if (categoryType.value === 'singing') return t('category.singing')
   return ''
 })
 

@@ -1,0 +1,52 @@
+{
+  "home": {
+    "title": "Guitar Tabs",
+    "subtitle": "Online Collection of Fingerstyle & Singing Guitar Sheet Music",
+    "header": "Guitar Tabs Collection",
+    "description": "A collection of guitar tab resources, including fingerstyle and singing sheet music, to help guitar enthusiasts.",
+    "categories": "Sheet Music Categories",
+    "recentUpdates": "Recent Updates",
+    "view": "View"
+  },
+  "nav": {
+    "home": "Home",
+    "fingerstyle": "Fingerstyle",
+    "singing": "Singing",
+    "search": "Search"
+  },
+  "category": {
+    "fingerstyle": "Fingerstyle",
+    "singing": "Singing",
+    "artists": "artists",
+    "songs": "songs",
+    "browseFingerstyle": "Browse Fingerstyle Tabs",
+    "browseSinging": "Browse Singing Tabs",
+    "viewSongs": "View Songs",
+    "total": "Total"
+  },
+  "artist": {
+    "backTo": "Back to",
+    "songs": "songs",
+    "files": "files"
+  },
+  "viewTab": {
+    "backTo": "Back to",
+    "pdfDownload": "PDF files need to be downloaded to view",
+    "downloadPdf": "Download PDF file",
+    "imageAlt": "Guitar Tab",
+    "markdownDownload": "Markdown files need to be downloaded to view",
+    "downloadMarkdown": "Download Markdown file",
+    "otherFileType": "Cannot preview this file type, please download to view",
+    "downloadFile": "Download file"
+  },
+  "common": {
+    "loading": "Loading"
+  },
+  "footer": {
+    "copyright": "© 2023 online-guitartuner.com. All rights reserved.",
+    "disclaimer": "Disclaimer",
+    "contact": "Contact",
+    "lastUpdated": "Last Updated",
+    "poweredBy": "Powered by"
+  }
+} 

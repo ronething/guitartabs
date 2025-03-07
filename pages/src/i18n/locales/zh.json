@@ -1,0 +1,52 @@
+{
+  "home": {
+    "title": "吉他谱",
+    "subtitle": "指弹与弹唱吉他乐谱在线收集",
+    "header": "吉他谱收藏",
+    "description": "收集整理的吉他谱资源，包括指弹和弹唱曲谱，希望能帮助到热爱吉他的你。",
+    "categories": "曲谱分类",
+    "recentUpdates": "最近更新",
+    "view": "查看"
+  },
+  "nav": {
+    "home": "首页",
+    "fingerstyle": "指弹",
+    "singing": "弹唱",
+    "search": "搜索"
+  },
+  "category": {
+    "fingerstyle": "指弹",
+    "singing": "弹唱",
+    "artists": "位艺术家",
+    "songs": "首曲目",
+    "browseFingerstyle": "浏览指弹谱",
+    "browseSinging": "浏览弹唱谱",
+    "viewSongs": "查看曲目",
+    "total": "共"
+  },
+  "artist": {
+    "backTo": "返回",
+    "songs": "首曲目",
+    "files": "个文件"
+  },
+  "viewTab": {
+    "backTo": "返回",
+    "pdfDownload": "PDF文件需要下载后查看",
+    "downloadPdf": "下载PDF文件",
+    "imageAlt": "吉他谱",
+    "markdownDownload": "Markdown文件需要下载后查看",
+    "downloadMarkdown": "下载Markdown文件",
+    "otherFileType": "无法预览此文件类型，请下载后查看",
+    "downloadFile": "下载文件"
+  },
+  "common": {
+    "loading": "加载中"
+  },
+  "footer": {
+    "copyright": "© 2023 online-guitartuner.com. 版权所有。",
+    "disclaimer": "免责声明",
+    "contact": "联系我们",
+    "lastUpdated": "数据更新时间",
+    "poweredBy": "技术支持"
+  }
+} 
