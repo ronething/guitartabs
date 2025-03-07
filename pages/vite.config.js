@@ -21,10 +21,6 @@ export default defineConfig({
         // 定义网站URLs数组，便于维护和扩展
         const urls = [
           { url: '/', changefreq: 'weekly', priority: '1.0' },
-          { url: '/en/', changefreq: 'weekly', priority: '0.9' },
-          { url: '/zh/', changefreq: 'weekly', priority: '0.9' },
-          { url: '/fingerstyle/', changefreq: 'weekly', priority: '0.8' },
-          { url: '/singing/', changefreq: 'weekly', priority: '0.8' },
           // 可以在这里添加更多URL
         ];
         
