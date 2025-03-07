@@ -163,7 +163,8 @@ async function generateTabsDataFile() {
     // 写入JSON文件
     fs.writeFileSync(
       path.join(outputDir, 'tabs-data.json'),
-      JSON.stringify(dataWithTimestamp, null, 2)
+      JSON.stringify(dataWithTimestamp, null, 2),
+      'utf-8'
     );
     
     console.log('数据文件生成成功!');

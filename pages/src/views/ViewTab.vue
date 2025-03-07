@@ -11,7 +11,7 @@
             :to="{ name: 'Artist', params: { type: categoryType, name: artistName }}" 
             class="mr-2 text-sm font-medium text-blue-600 hover:text-blue-500"
           >
-            &larr; 返回{{ artistName }}
+            &larr; {{ $t('viewTab.backTo') }} {{ artistName }}
           </router-link>
         </div>
         <h1 class="mt-2 text-3xl font-extrabold text-gray-900">{{ songName }}</h1>
@@ -25,42 +25,42 @@
         <div class="px-4 py-5 sm:p-6">
           <!-- PDF查看器 -->
           <div v-if="fileType === 'pdf'" class="flex flex-col items-center">
-            <p class="mb-4 text-gray-500">PDF文件需要下载后查看</p>
+            <p class="mb-4 text-gray-500">{{ $t('viewTab.pdfDownload') }}</p>
             <a 
               :href="fileUrl" 
               download
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              下载PDF文件
+              {{ $t('viewTab.downloadPdf') }}
             </a>
           </div>
 
           <!-- 图片查看器 -->
           <div v-else-if="['jpg', 'jpeg', 'png'].includes(fileType)" class="flex justify-center">
-            <img :src="fileUrl" alt="吉他谱" class="max-w-full h-auto" />
+            <img :src="fileUrl" :alt="$t('viewTab.imageAlt')" class="max-w-full h-auto" />
           </div>
 
           <!-- Markdown查看器 -->
           <div v-else-if="fileType === 'md'" class="prose max-w-none">
-            <p class="text-gray-500">Markdown文件需要下载后查看</p>
+            <p class="text-gray-500">{{ $t('viewTab.markdownDownload') }}</p>
             <a 
               :href="fileUrl" 
               download
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              下载Markdown文件
+              {{ $t('viewTab.downloadMarkdown') }}
             </a>
           </div>
 
           <!-- 其他文件类型 -->
           <div v-else class="text-center">
-            <p class="text-gray-500">无法预览此文件类型，请下载后查看</p>
+            <p class="text-gray-500">{{ $t('viewTab.otherFileType') }}</p>
             <a 
               :href="fileUrl" 
               download
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              下载文件
+              {{ $t('viewTab.downloadFile') }}
             </a>
           </div>
         </div>
@@ -72,8 +72,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
 const route = useRoute()
+const { t } = useI18n()
 const loading = ref(true)
 
 // 获取路由参数

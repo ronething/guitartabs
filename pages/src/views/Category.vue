@@ -6,9 +6,9 @@
 
     <div v-else>
       <div class="mb-8">
-        <h1 class="text-3xl font-extrabold text-gray-900">{{ categoryName }}</h1>
+        <h1 class="text-3xl font-extrabold text-gray-900">{{ categoryNameI18n }}</h1>
         <p class="mt-2 text-sm text-gray-500">
-          共 {{ artists.length }} 位艺术家，{{ totalSongs }} 首曲目
+          {{ $t('category.total') }} {{ artists.length }} {{ $t('category.artists') }}，{{ totalSongs }} {{ $t('category.songs') }}
         </p>
       </div>
 
@@ -17,13 +17,13 @@
         <div v-for="artist in artists" :key="artist.name" class="bg-white overflow-hidden shadow rounded-lg">
           <div class="px-4 py-5 sm:p-6">
             <h3 class="text-lg font-medium text-gray-900 truncate">{{ artist.name }}</h3>
-            <p class="mt-1 text-sm text-gray-500">{{ artist.songs.length }} 首曲目</p>
+            <p class="mt-1 text-sm text-gray-500">{{ artist.songs.length }} {{ $t('category.songs') }}</p>
             <div class="mt-4">
               <router-link 
                 :to="{ name: 'Artist', params: { type: categoryType, name: artist.name }}" 
                 class="text-sm font-medium text-blue-600 hover:text-blue-500"
               >
-                查看曲目 &rarr;
+                {{ $t('category.viewSongs') }} &rarr;
               </router-link>
             </div>
           </div>
@@ -36,9 +36,11 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { buildGuitarTabsData } from '../utils/guitarTabService'
 
 const route = useRoute()
+const { t } = useI18n()
 const loading = ref(true)
 const data = ref({
   fingerStyle: { name: '指弹', artists: [] },
@@ -52,6 +54,13 @@ const categoryType = computed(() => route.params.type)
 const categoryName = computed(() => {
   if (categoryType.value === 'fingerStyle') return '指弹'
   if (categoryType.value === 'singing') return '弹唱'
+  return ''
+})
+
+// 国际化分类名称
+const categoryNameI18n = computed(() => {
+  if (categoryType.value === 'fingerStyle') return t('category.fingerstyle')
+  if (categoryType.value === 'singing') return t('category.singing')
   return ''
 })
 
