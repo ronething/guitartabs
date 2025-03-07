@@ -5,33 +5,16 @@
   <title>Guitar Tabs - Page Redirect</title>
   <script>
     // 单页应用的GitHub Pages重定向
-    // 这段代码会把所有请求重定向到index.html，让Vue Router处理路由
+    // 这段代码会把所有请求重定向到 home /，让Vue Router处理路由
     (function() {
-      // 获取当前网址，删除域名部分，只保留路径
-      var segmentCount = 0;
-      var location = window.location;
-      var l = location.pathname.split('/').filter(function(p) { return p !== ''; });
-      var path = l.join('/');
-      var redirectPath = location.pathname.replace(/\/[^\/]*$/, '') + '/index.html';
-      
-      // 保留所有查询参数和哈希值
-      if (location.search || location.hash) {
-        redirectPath += (location.search || '') + (location.hash || '');
-      }
-      
-      // 如果有路径，添加到URL中以便Vue Router能够处理
-      if (path) {
-        redirectPath += '?redirect=' + encodeURIComponent(location.pathname + (location.search || '') + (location.hash || ''));
-      }
-      
-      // 重定向到index.html
+      // 重定向到 home /
       sessionStorage.redirect = location.href;
-      location.replace(redirectPath);
+      location.replace('/');
     })();
   </script>
 </head>
 <body>
   <h1>Redirecting...</h1>
-  <p>If you are not redirected automatically, <a href="index.html">click here</a>.</p>
+  <p>If you are not redirected automatically, <a href="/">click here</a>.</p>
 </body>
 </html> 
