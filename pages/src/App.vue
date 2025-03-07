@@ -31,11 +31,12 @@
               <div 
                 v-show="isLanguageDropdownOpen" 
                 class="absolute right-0 mt-1 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
+                @click.stop
               >
                 <div class="py-1" role="menu" aria-orientation="vertical">
                   <a 
                     href="#" 
-                    @click.prevent="changeLocale('en')" 
+                    @click.prevent.stop="changeLocale('en')" 
                     class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 transition-colors duration-200"
                     :class="currentLocale === 'en' ? 'text-blue-600 font-medium' : 'text-gray-700'"
                   >
@@ -47,7 +48,7 @@
                   </a>
                   <a 
                     href="#" 
-                    @click.prevent="changeLocale('zh')" 
+                    @click.prevent.stop="changeLocale('zh')" 
                     class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 transition-colors duration-200"
                     :class="currentLocale === 'zh' ? 'text-blue-600 font-medium' : 'text-gray-700'"
                   >
@@ -105,13 +106,21 @@ const currentLocale = computed({
 });
 
 // 切换语言下拉菜单
-function toggleLanguageDropdown() {
+function toggleLanguageDropdown(event) {
+  // 阻止事件冒泡，避免立即触发document的点击事件
+  if (event) {
+    event.stopPropagation();
+  }
   isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value;
 }
 
 // 点击其他区域关闭下拉菜单
 function closeDropdownOnOutsideClick(event) {
-  if (isLanguageDropdownOpen.value) {
+  // 获取语言切换容器元素
+  const languageContainer = document.querySelector('.relative.inline-block');
+  
+  // 如果下拉菜单打开，且点击事件不在语言切换容器内部，则关闭下拉菜单
+  if (isLanguageDropdownOpen.value && languageContainer && !languageContainer.contains(event.target)) {
     isLanguageDropdownOpen.value = false;
   }
 }
