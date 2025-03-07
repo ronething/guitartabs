@@ -49,3 +49,5 @@ npm run preview
 visit https://tabs.online-guitartuner.com for guitar tabs
 
 try our online guitar tuner on https://www.online-guitartuner.com.
+
+share notes: https://lite.evernote.com/note/67c5f427-8d52-2836-e11c-361e505ae117
