@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-03-08T02:28:58.497Z",
+  "lastUpdated": "2025-03-09T02:33:14.785Z",
   "data": {
     "fingerStyle": {
       "name": "指弹",
@@ -723,9 +723,40 @@
               ]
             },
             {
-              "name": "��",
-              "path": "fingerStyle/岸部眞明/��",
-              "files": []
+              "name": "花",
+              "path": "fingerStyle/岸部眞明/花",
+              "files": [
+                {
+                  "name": "1.jpg",
+                  "path": "fingerStyle/岸部眞明/花/1.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/1.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "2.jpg",
+                  "path": "fingerStyle/岸部眞明/花/2.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/2.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "3.jpg",
+                  "path": "fingerStyle/岸部眞明/花/3.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/3.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "4.jpg",
+                  "path": "fingerStyle/岸部眞明/花/4.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/4.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "README.md",
+                  "path": "fingerStyle/岸部眞明/花/README.md",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/README.md",
+                  "type": "md"
+                }
+              ]
             }
           ]
         },
@@ -1368,9 +1399,9 @@
               "path": "fingerStyle/郑成河/River Flows in You",
               "files": [
                 {
-                  "name": "郑成河《RiverFlowsinYou》指弹吉他谱.pdf",
-                  "path": "fingerStyle/郑成河/River Flows in You/郑成河《RiverFlowsinYou》指弹吉他谱.pdf",
-                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/郑成河/River Flows in You/郑成河《RiverFlowsinYou》指弹吉他谱.pdf",
+                  "name": "郑成河《RiverFlowsinYou》指���吉他谱.pdf",
+                  "path": "fingerStyle/郑成河/River Flows in You/郑成河《RiverFlowsinYou》指���吉他谱.pdf",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/郑成河/River Flows in You/郑成河《RiverFlowsinYou》指���吉他谱.pdf",
                   "type": "pdf"
                 }
               ]
