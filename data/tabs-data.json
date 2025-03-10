@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-03-07T02:55:45.984Z",
+  "lastUpdated": "2025-03-10T16:35:09.396Z",
   "data": {
     "fingerStyle": {
       "name": "指弹",
@@ -723,9 +723,40 @@
               ]
             },
             {
-              "name": "��",
-              "path": "fingerStyle/岸部眞明/��",
-              "files": []
+              "name": "花",
+              "path": "fingerStyle/岸部眞明/花",
+              "files": [
+                {
+                  "name": "1.jpg",
+                  "path": "fingerStyle/岸部眞明/花/1.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/1.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "2.jpg",
+                  "path": "fingerStyle/岸部眞明/花/2.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/2.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "3.jpg",
+                  "path": "fingerStyle/岸部眞明/花/3.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/3.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "4.jpg",
+                  "path": "fingerStyle/岸部眞明/花/4.jpg",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/4.jpg",
+                  "type": "jpg"
+                },
+                {
+                  "name": "README.md",
+                  "path": "fingerStyle/岸部眞明/花/README.md",
+                  "download_url": "https://raw.githubusercontent.com/ronething/guitartabs/master/fingerStyle/岸部眞明/花/README.md",
+                  "type": "md"
+                }
+              ]
             }
           ]
         },
