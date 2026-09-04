@@ -47,4 +47,4 @@ npm run preview
 # 致谢
 
 - https://tabs.online-guitartuner.com
-- [guitar tuner docs]https://docs.google.com/document/d/1C4wHMxkr2Xx9CPJF4BE20_5yA5kuJOfeRspY6eEseP4/edit?usp=sharing
+- [guitar tuner docs](https://docs.google.com/document/d/1C4wHMxkr2Xx9CPJF4BE20_5yA5kuJOfeRspY6eEseP4/edit?usp=sharing)
