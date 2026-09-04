@@ -47,8 +47,4 @@ npm run preview
 # 致谢
 
 - https://tabs.online-guitartuner.com
-- https://www.online-guitartuner.com
-- https://lite.evernote.com/note/67c5f427-8d52-2836-e11c-361e505ae117
-- https://bio.site/guitartuner
-- https://wushihong.mssg.me
-- https://ramen.tools/@axuan
+- [guitar tuner docs]https://docs.google.com/document/d/1C4wHMxkr2Xx9CPJF4BE20_5yA5kuJOfeRspY6eEseP4/edit?usp=sharing
